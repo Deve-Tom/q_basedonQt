@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>loginWidget</class>
+ <widget class="QWidget" name="loginWidget">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>320</width>
+    <height>448</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>320</width>
+    <height>448</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>320</width>
+    <height>448</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>loginWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#loginWidget{
+border-image: url(:/backGround/src/loginWindow/assets/static/login_background.png);
+}
+</string>
+  </property>
+  <widget class="QLineEdit" name="passwordLineEdit">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>222</y>
+     <width>255</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>255</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>255</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>11</pointsize>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+border-radius:8px;
+border-with:0;
+border-style:outset;
+font: 400 11pt &quot;微软雅黑&quot;;
+color: rgb(138, 138, 138);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>322</y>
+     <width>256</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>256</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>246</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+border-radius:5px;
+background-color: rgb(191, 224, 250);
+border-with:0;
+color: rgb(255, 255, 255);
+border-style:outset
+}</string>
+   </property>
+   <property name="text">
+    <string>登录</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="IDComboBox">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>167</y>
+     <width>255</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>255</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>255</width>
+     <height>44</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox{
+border-radius:5px;
+border-with:0;
+font: 400 12pt &quot;微软雅黑&quot;;
+color: rgb(138, 138, 138);
+}
+
+
+QComboBox::drop-down{
+border-radius:5px;
+border-with:0;
+image url(:/backGround/src/loginWindow/assets/static/down.png);
+}</string>
+   </property>
+   <property name="editable">
+    <bool>true</bool>
+   </property>
+   <property name="currentText">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="pictureLabel">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>80</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton">
+   <property name="geometry">
+    <rect>
+     <x>31</x>
+     <y>284</y>
+     <width>241</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>241</width>
+     <height>13</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>241</width>
+     <height>13</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(179, 179, 179);
+
+QRadioButton::disabled{
+border-radius: 5;
+color:rgb(0,0,0,0);
+}</string>
+   </property>
+   <property name="text">
+    <string>已阅读并同意</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>124</x>
+     <y>283</y>
+     <width>54</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(4, 157, 255);</string>
+   </property>
+   <property name="text">
+    <string>服务协议</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>173</x>
+     <y>283</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(179, 179, 179);</string>
+   </property>
+   <property name="text">
+    <string>和</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>186</x>
+     <y>283</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(4, 157, 255);</string>
+   </property>
+   <property name="text">
+    <string>QQ隐私保护指引</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../qrc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

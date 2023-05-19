@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/backGround">
+        <file>src/loginWindow/assets/static/login_background.png</file>
+        <file>src/loginWindow/assets/static/down.png</file>
+        <file>src/loginWindow/assets/static/default.png</file>
+    </qresource>
+    <qresource prefix="">
+        <file>soft.ico</file>
+    </qresource>
+</RCC>
