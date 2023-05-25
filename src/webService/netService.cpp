@@ -20,8 +20,6 @@ QJsonObject netService::sendRequest( QJsonObject &data,QString router) {
     request.setUrl(_url);
     request.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
 
-    qDebug()<<"ueser_id-json:"<<data["user_id"]<<" "<<"password-json:"<<data["password"]<<"\n";
-    qDebug()<<QJsonDocument(data).toJson();
     // 发送请求
     QNetworkReply *reply = manager->post(request,QJsonDocument(data).toJson());
 

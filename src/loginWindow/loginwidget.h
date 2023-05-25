@@ -1,7 +1,3 @@
-//
-// Created by 23148 on 2023/5/6.
-//
-
 #ifndef Q_BASEDONQT_LOGINWIDGET_H
 #define Q_BASEDONQT_LOGINWIDGET_H
 
@@ -10,6 +6,8 @@
 #include <QPainterPath>
 #include <QMouseEvent>
 #include <QLineEdit>
+#include <QToolButton>
+#include <QGraphicsDropShadowEffect>
 #include "../webService/netService.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,6 +26,7 @@ private:
     bool m_dragging = false;
     QPoint m_dragPos;
     netService* net;
+    QToolButton* clearButton;
 
 private:
     Ui::loginWidget *ui;
@@ -41,6 +40,8 @@ private slots:
     void on_pushLogin();
     void on_currentDataChanged(const QString &arg1);
     void on_radioBtn(bool checked);
+    void on_closePushButton_clicked();
+    void on_minPushButton_clicked();
 };
 
 

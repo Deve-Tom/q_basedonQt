@@ -32,6 +32,7 @@ public:
         SendMessageServer,
         ReceiveMessageServer
     };
+
 public:
     explicit netService(QString url,QObject *parent = nullptr);
     ~netService() override;

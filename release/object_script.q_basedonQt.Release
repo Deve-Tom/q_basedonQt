@@ -1,0 +1,10 @@
+release/main.o
+release/loginwidget.o
+release/mainwindow.o
+release/jsonfilecoinfig.o
+release/netService.o
+release/qrc_qrc.o
+release/qrc_qmake_qmake_qm_files.o
+release/moc_loginwidget.o
+release/moc_mainwindow.o
+release/moc_netService.o

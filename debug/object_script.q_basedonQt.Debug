@@ -1,0 +1,10 @@
+debug/main.o
+debug/loginwidget.o
+debug/mainwindow.o
+debug/jsonfilecoinfig.o
+debug/netService.o
+debug/qrc_qrc.o
+debug/qrc_qmake_qmake_qm_files.o
+debug/moc_loginwidget.o
+debug/moc_mainwindow.o
+debug/moc_netService.o
