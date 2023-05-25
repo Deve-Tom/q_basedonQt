@@ -4,7 +4,14 @@
         <file>src/loginWindow/assets/static/down.png</file>
         <file>src/loginWindow/assets/static/default.png</file>
     </qresource>
-    <qresource prefix="">
+    <qresource prefix="/">
         <file>soft.ico</file>
+    </qresource>
+    <qresource prefix="/button">
+        <file>img/close-button-normal.png</file>
+        <file>img/minimize.png</file>
+        <file>img/close-button-active.png</file>
+        <file>img/close-button-hover.png</file>
+        <file>img/icon_arrow_down.png</file>
     </qresource>
 </RCC>

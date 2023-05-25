@@ -11,14 +11,19 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     src/loginWindow/loginwidget.cpp \
+    src/mainWindow/mainwindow.cpp \
+    src/utils/jsonfilecoinfig.cpp \
     src/webService/netService.cpp
 
 HEADERS += \
     src/loginWindow/loginwidget.h \
+    src/mainWindow/mainwindow.h \
+    src/utils/jsonfilecoinfig.h \
     src/webService/netService.h
 
 FORMS += \
-    src/loginWindow/loginwidget.ui
+    src/loginWindow/loginwidget.ui \
+    src/mainWindow/mainwindow.ui
 
 TRANSLATIONS += \
     q_basedonQt_zh_CN.ts
