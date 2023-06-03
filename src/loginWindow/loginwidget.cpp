@@ -17,6 +17,7 @@ loginWidget::~loginWidget() {
     delete ui;
 }
 
+// 绘制窗口
 void loginWidget::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing,true);
@@ -28,6 +29,7 @@ void loginWidget::paintEvent(QPaintEvent *event) {
     QWidget::paintEvent(event);
 }
 
+// 鼠标点击事件重写——让其可以进行窗口移动
 void loginWidget::mousePressEvent(QMouseEvent *event) {
     if (Qt::LeftButton == event->button()) {
         m_dragging = true;
@@ -36,6 +38,7 @@ void loginWidget::mousePressEvent(QMouseEvent *event) {
     }
 }
 
+// 鼠标点击事件重写——让其可以进行窗口移动
 void loginWidget::mouseMoveEvent(QMouseEvent *event) {
     if (m_dragging) {
         move(event->globalPosition().toPoint() - m_dragPos);
@@ -43,6 +46,7 @@ void loginWidget::mouseMoveEvent(QMouseEvent *event) {
     }
 }
 
+// 鼠标点击事件重写——让其可以进行窗口移动
 void loginWidget::mouseReleaseEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {
         m_dragging = false;
@@ -50,6 +54,7 @@ void loginWidget::mouseReleaseEvent(QMouseEvent *event) {
     }
 }
 
+// 窗口初始化
 void loginWidget::initUi() {
     this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     this->setAttribute(Qt::WA_TranslucentBackground,true);
@@ -74,7 +79,7 @@ void loginWidget::initUi() {
     ui->passwordLineEdit->setPlaceholderText("请输入密码");
     lineEdit->setAlignment(Qt::AlignCenter);
 
-    // 为QCombobox添加清除按钮
+    // 为QCombobox添加清除按钮(默认隐藏）
     this->clearButton = new QToolButton(ui->IDComboBox);
     clearButton->setIcon(QIcon(":/button/img/close-button-normal.png"));
     clearButton->setCursor(Qt::ArrowCursor);
@@ -86,12 +91,14 @@ void loginWidget::initUi() {
     clearButton->hide();
 }
 
+// 登录界面头像（需要调整为从指定文件中获取）
 void loginWidget::initPicture() {
     QPixmap pixmap(":/backGround/src/loginWindow/assets/static/default.png");
     pixmap = pixmap.scaled(ui->pictureLabel->size(),Qt::KeepAspectRatio,Qt::SmoothTransformation);
     ui->pictureLabel->setPixmap(pixmap);
 }
 
+// 当前有数据输入时更改输入框样式
 void loginWidget::on_currentDataChanged(const QString &arg1) {
     Q_UNUSED(arg1)
     if(!ui->IDComboBox->currentText().isEmpty()&&!ui->passwordLineEdit->text().isEmpty()&&ui->radioButton->isChecked()) {
@@ -104,6 +111,7 @@ void loginWidget::on_currentDataChanged(const QString &arg1) {
     }
 }
 
+// 登录按钮点击
 void loginWidget::on_pushLogin() {
     auto id = ui->IDComboBox->currentText();
     auto password = ui->passwordLineEdit->text();
@@ -112,9 +120,37 @@ void loginWidget::on_pushLogin() {
     jsonObj.insert("user_id",id);
     jsonObj.insert("password",password);
 
-    auto data=net->sendRequest(jsonObj,"/user/login/");
+    auto data=net->sendRequestPost(jsonObj,"/user/login/");
+
+    // 如果登录成功则存储用户信息
+    if(!data.value("token").isUndefined()){
+        this->FileControler = new UserFile(id,this);
+
+        this->FileControler->writeFile(JsonTools::jsonToQString(data),
+                                       "keys.json",
+                                       UserFile::Choice::UserInforFilePath);
+
+        // 对返回的Json数据解析JWT
+        QString jsonToken = "This_is_HolaaPlanet_jwt_key"; // 密钥不安全，后面视情况看改为随机密钥，重写这部分代码
+        QString getToken = data.value("token").toString();
+        QJsonWebToken token = QJsonWebToken::fromTokenAndSecret(getToken,jsonToken);
+
+        // 加载JWT的Payload到JsonObject
+        QJsonDocument JsonTokenInfo = token.getPayloadJDoc();
+        QJsonObject JsonTokenObj = JsonTokenInfo.object();
+
+        // 判断是否逾期，如果没有逾期则进入主窗口
+        if(JsonTools::JWTCurrentTimeCompare(JsonTokenObj.value("exp").toDouble(),
+                                             QDateTime::currentDateTime())){
+            this->mainWidget = new mainWindow;
+            this->mainWidget->setAttribute(Qt::WA_DeleteOnClose);
+            this->mainWidget->show();
+            this->hide();
+        }
+    }
 }
 
+// 协议选择样式设置
 void loginWidget::on_radioBtn(bool checked) {
     Q_UNUSED(checked)
     if(!ui->IDComboBox->currentText().isEmpty()&&!ui->passwordLineEdit->text().isEmpty()&&ui->radioButton->isChecked()) {
@@ -127,16 +163,13 @@ void loginWidget::on_radioBtn(bool checked) {
     }
 }
 
-void loginWidget::on_closePushButton_clicked()
-{
-    // 关闭本窗口
+// 关闭本窗口
+void loginWidget::on_closePushButton_clicked(){
     this->close();
 }
 
-
-void loginWidget::on_minPushButton_clicked()
-{
-    // 最小化本窗口
+// 最小化本窗口
+void loginWidget::on_minPushButton_clicked(){
     this->showMinimized();
 }
 

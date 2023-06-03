@@ -130,10 +130,12 @@ public:
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(185, 283, 91, 16));
         label_3->setStyleSheet(QString::fromUtf8("color: rgb(4, 157, 255);"));
+        label_3->setOpenExternalLinks(true);
         label = new QLabel(widget);
         label->setObjectName("label");
         label->setGeometry(QRect(124, 283, 54, 16));
         label->setStyleSheet(QString::fromUtf8("color: rgb(4, 157, 255);"));
+        label->setOpenExternalLinks(true);
         radioButton = new QRadioButton(widget);
         radioButton->setObjectName("radioButton");
         radioButton->setGeometry(QRect(32, 284, 241, 13));

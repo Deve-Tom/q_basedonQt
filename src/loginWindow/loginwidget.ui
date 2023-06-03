@@ -184,6 +184,9 @@ QLineEdit:focus{
       <property name="text">
        <string>QQ隐私保护指引</string>
       </property>
+      <property name="openExternalLinks">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QLabel" name="label">
       <property name="geometry">
@@ -199,6 +202,9 @@ QLineEdit:focus{
       </property>
       <property name="text">
        <string>服务协议</string>
+      </property>
+      <property name="openExternalLinks">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QRadioButton" name="radioButton">

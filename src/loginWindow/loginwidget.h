@@ -9,6 +9,11 @@
 #include <QToolButton>
 #include <QGraphicsDropShadowEffect>
 #include "../webService/netService.h"
+#include "../utils/jsonfilecoinfig.h"
+#include "../utils/jsontools.h"
+#include "../utils/userfile.h"
+#include "../mainWindow/mainwindow.h"
+#include "../utils/QJsonWebSocket/qjsonwebtoken.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,6 +32,8 @@ private:
     QPoint m_dragPos;
     netService* net;
     QToolButton* clearButton;
+    UserFile *FileControler;
+    mainWindow* mainWidget;
 
 private:
     Ui::loginWidget *ui;

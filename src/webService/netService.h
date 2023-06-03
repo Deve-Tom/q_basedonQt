@@ -36,7 +36,7 @@ public:
 public:
     explicit netService(QString url,QObject *parent = nullptr);
     ~netService() override;
-    QJsonObject sendRequest(QJsonObject &data,QString router);
+    QJsonObject sendRequestPost(QJsonObject &data,QString router);
 private:
     QString url;
     QNetworkAccessManager *manager;

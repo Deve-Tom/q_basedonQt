@@ -1,4 +1,4 @@
-QT       += core gui network
+QT       += core gui network websockets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,14 +12,22 @@ SOURCES += \
     main.cpp \
     src/loginWindow/loginwidget.cpp \
     src/mainWindow/mainwindow.cpp \
+    src/utils/QJsonWebSocket/qjsonwebtoken.cpp \
     src/utils/jsonfilecoinfig.cpp \
-    src/webService/netService.cpp
+    src/utils/jsontools.cpp \
+    src/utils/userfile.cpp \
+    src/webService/netService.cpp \
+    src/webService/websocketclient.cpp
 
 HEADERS += \
     src/loginWindow/loginwidget.h \
     src/mainWindow/mainwindow.h \
+    src/utils/QJsonWebSocket/qjsonwebtoken.h \
     src/utils/jsonfilecoinfig.h \
-    src/webService/netService.h
+    src/utils/jsontools.h \
+    src/utils/userfile.h \
+    src/webService/netService.h \
+    src/webService/websocketclient.h
 
 FORMS += \
     src/loginWindow/loginwidget.ui \
@@ -36,4 +44,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    qrc.qrc
+    src.qrc
