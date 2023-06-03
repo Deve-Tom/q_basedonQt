@@ -2,9 +2,14 @@ release/main.o
 release/loginwidget.o
 release/mainwindow.o
 release/jsonfilecoinfig.o
+release/jsontools.o
+release/userfile.o
 release/netService.o
-release/qrc_qrc.o
+release/websocketclient.o
+release/qrc_src.o
 release/qrc_qmake_qmake_qm_files.o
 release/moc_loginwidget.o
 release/moc_mainwindow.o
+release/moc_userfile.o
 release/moc_netService.o
+release/moc_websocketclient.o

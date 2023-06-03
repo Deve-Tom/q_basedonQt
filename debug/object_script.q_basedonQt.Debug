@@ -2,9 +2,14 @@ debug/main.o
 debug/loginwidget.o
 debug/mainwindow.o
 debug/jsonfilecoinfig.o
+debug/jsontools.o
+debug/userfile.o
 debug/netService.o
-debug/qrc_qrc.o
+debug/websocketclient.o
+debug/qrc_src.o
 debug/qrc_qmake_qmake_qm_files.o
 debug/moc_loginwidget.o
 debug/moc_mainwindow.o
+debug/moc_userfile.o
 debug/moc_netService.o
+debug/moc_websocketclient.o

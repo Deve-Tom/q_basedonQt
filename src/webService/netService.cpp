@@ -12,7 +12,7 @@ netService::~netService() {
     delete manager;
 }
 
-QJsonObject netService::sendRequest( QJsonObject &data,QString router) {
+QJsonObject netService::sendRequestPost( QJsonObject &data,QString router) {
     QJsonObject result;
     QNetworkRequest request;
     QUrl _url(this->url+router);

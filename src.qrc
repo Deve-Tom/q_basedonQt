@@ -13,5 +13,7 @@
         <file>img/close-button-active.png</file>
         <file>img/close-button-hover.png</file>
         <file>img/icon_arrow_down.png</file>
+        <file>img/normal_message.png</file>
+        <file>img/highlight_message.svg</file>
     </qresource>
 </RCC>
