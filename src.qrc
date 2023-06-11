@@ -16,4 +16,20 @@
         <file>img/normal_message.png</file>
         <file>img/highlight_message.svg</file>
     </qresource>
+    <qresource prefix="/mainMenu">
+        <file>img/FriendListO.png</file>
+        <file>img/friendListU.png</file>
+        <file>img/item-icon-channel.03b8023433fd6eb0af3a.svg</file>
+        <file>img/mail.png</file>
+        <file>img/normal_list_active_icon.a3c44178dd097a6f1cda.svg</file>
+        <file>img/normal_list_icon.f447ca40b46870868357.svg</file>
+        <file>img/space.png</file>
+        <file>img/channel.png</file>
+        <file>img/collect.png</file>
+        <file>img/file.png</file>
+        <file>img/add_imge.svg</file>
+        <file>img/collectO.png</file>
+        <file>img/emailO.png</file>
+        <file>img/fileO.png</file>
+    </qresource>
 </RCC>
