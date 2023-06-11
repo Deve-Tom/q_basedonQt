@@ -12,6 +12,7 @@ SOURCES += \
     main.cpp \
     src/loginWindow/loginwidget.cpp \
     src/mainWindow/mainwindow.cpp \
+    src/messageWindow/dialogmessage.cpp \
     src/utils/QJsonWebSocket/qjsonwebtoken.cpp \
     src/utils/jsonfilecoinfig.cpp \
     src/utils/jsontools.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 HEADERS += \
     src/loginWindow/loginwidget.h \
     src/mainWindow/mainwindow.h \
+    src/messageWindow/dialogmessage.h \
     src/utils/QJsonWebSocket/qjsonwebtoken.h \
     src/utils/jsonfilecoinfig.h \
     src/utils/jsontools.h \
@@ -31,7 +33,10 @@ HEADERS += \
 
 FORMS += \
     src/loginWindow/loginwidget.ui \
-    src/mainWindow/mainwindow.ui
+    src/mainWindow/mainwindow.ui \
+    src/messageWindow/dialogmessage.ui
+
+UI_DIR = .
 
 TRANSLATIONS += \
     q_basedonQt_zh_CN.ts

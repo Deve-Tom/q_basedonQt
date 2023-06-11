@@ -1,5 +1,5 @@
 
-#include "./src/loginWindow/loginwidget.h"
+#include "./src/mainWindow/mainwindow.h"
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    loginWidget w;
+    mainWindow w;
     w.show();
     return a.exec();
 }
