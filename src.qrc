@@ -31,5 +31,27 @@
         <file>img/collectO.png</file>
         <file>img/emailO.png</file>
         <file>img/fileO.png</file>
+        <file>img/close-button-active.png</file>
+        <file>img/close-button-hover.png</file>
+        <file>img/close-button-normal.png</file>
+        <file>img/grid_active_icon.svg</file>
+        <file>img/grid_icon.svg</file>
+        <file>img/highlight.63abde81ebbb8a994bc9.svg</file>
+        <file>img/highlight_message.svg</file>
+        <file>img/icon_arrow_down.png</file>
+        <file>img/minimize.png</file>
+        <file>img/normal_message.png</file>
+        <file>img/emotion1.png</file>
+        <file>img/emotion2.png</file>
+        <file>img/hisrory2.png</file>
+        <file>img/history1.png</file>
+        <file>img/picture1.png</file>
+        <file>img/picture2.png</file>
+        <file>img/screencut1.png</file>
+        <file>img/screencut2.png</file>
+        <file>img/search1.png</file>
+        <file>img/search2.png</file>
+        <file>img/voice1.png</file>
+        <file>img/voice2.png</file>
     </qresource>
 </RCC>

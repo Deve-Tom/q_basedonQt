@@ -14,6 +14,7 @@
 #include "../utils/userfile.h"
 #include "../mainWindow/mainwindow.h"
 #include "../utils/QJsonWebSocket/qjsonwebtoken.h"
+#include <utility>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -43,12 +44,17 @@ private:
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event)override;
+
 private slots:
     void on_pushLogin();
     void on_currentDataChanged(const QString &arg1);
     void on_radioBtn(bool checked);
     void on_closePushButton_clicked();
     void on_minPushButton_clicked();
+
+signals:
+    void useLogin(std::tuple<QString,QString,QString> userInfo);
+    void sendNet(netService* net);
 };
 
 

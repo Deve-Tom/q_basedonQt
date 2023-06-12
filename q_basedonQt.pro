@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     src/loginWindow/loginwidget.cpp \
+    src/mainWindow/itemwidget.cpp \
     src/mainWindow/mainwindow.cpp \
     src/messageWindow/dialogmessage.cpp \
     src/utils/QJsonWebSocket/qjsonwebtoken.cpp \
@@ -22,6 +23,7 @@ SOURCES += \
 
 HEADERS += \
     src/loginWindow/loginwidget.h \
+    src/mainWindow/itemwidget.h \
     src/mainWindow/mainwindow.h \
     src/messageWindow/dialogmessage.h \
     src/utils/QJsonWebSocket/qjsonwebtoken.h \
@@ -33,6 +35,7 @@ HEADERS += \
 
 FORMS += \
     src/loginWindow/loginwidget.ui \
+    src/mainWindow/itemwidget.ui \
     src/mainWindow/mainwindow.ui \
     src/messageWindow/dialogmessage.ui
 

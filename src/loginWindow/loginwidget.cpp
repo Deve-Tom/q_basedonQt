@@ -144,6 +144,16 @@ void loginWidget::on_pushLogin() {
                                              QDateTime::currentDateTime())){
             this->mainWidget = new mainWindow;
             this->mainWidget->setAttribute(Qt::WA_DeleteOnClose);
+
+            // 将登录信息发给mainwindow并作窗口初始化
+            connect(this,&loginWidget::useLogin,this->mainWidget,&mainWindow::userInfo);
+            connect(this,&loginWidget::sendNet,this->mainWidget,&mainWindow::setNet);
+            emit this->useLogin(std::make_tuple(id,data.value("token").toString(),QString()));
+            emit this->sendNet(this->net);
+            // 这里可以设置加载动画
+            // ...
+            // ...
+
             this->mainWidget->show();
             this->hide();
         }
