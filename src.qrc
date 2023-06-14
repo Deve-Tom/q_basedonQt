@@ -3,6 +3,7 @@
         <file>src/loginWindow/assets/static/login_background.png</file>
         <file>src/loginWindow/assets/static/down.png</file>
         <file>src/loginWindow/assets/static/default.png</file>
+        <file>img/qqBackGround.png</file>
     </qresource>
     <qresource prefix="/">
         <file>soft.ico</file>
@@ -53,5 +54,8 @@
         <file>img/search2.png</file>
         <file>img/voice1.png</file>
         <file>img/voice2.png</file>
+    </qresource>
+    <qresource prefix="/loding">
+        <file>img/loading4.gif</file>
     </qresource>
 </RCC>

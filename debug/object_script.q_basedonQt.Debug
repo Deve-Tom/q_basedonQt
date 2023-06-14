@@ -1,9 +1,11 @@
 debug/main.o
 debug/loginwidget.o
-debug/frienditem.o
+debug/itemwidget.o
 debug/mainwindow.o
+debug/messageaction.o
 debug/dialogmessage.o
 debug/qjsonwebtoken.o
+debug/qnchatmessage.o
 debug/jsonfilecoinfig.o
 debug/jsontools.o
 debug/userfile.o
@@ -12,9 +14,11 @@ debug/websocketclient.o
 debug/qrc_src.o
 debug/qrc_qmake_qmake_qm_files.o
 debug/moc_loginwidget.o
-debug/moc_frienditem.o
+debug/moc_itemwidget.o
 debug/moc_mainwindow.o
+debug/moc_messageaction.o
 debug/moc_dialogmessage.o
+debug/moc_qnchatmessage.o
 debug/moc_userfile.o
 debug/moc_netService.o
 debug/moc_websocketclient.o

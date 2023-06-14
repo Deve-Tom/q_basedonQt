@@ -13,8 +13,10 @@ SOURCES += \
     src/loginWindow/loginwidget.cpp \
     src/mainWindow/itemwidget.cpp \
     src/mainWindow/mainwindow.cpp \
+    src/mainWindow/messageaction.cpp \
     src/messageWindow/dialogmessage.cpp \
     src/utils/QJsonWebSocket/qjsonwebtoken.cpp \
+    src/utils/chatmessage/qnchatmessage.cpp \
     src/utils/jsonfilecoinfig.cpp \
     src/utils/jsontools.cpp \
     src/utils/userfile.cpp \
@@ -25,8 +27,10 @@ HEADERS += \
     src/loginWindow/loginwidget.h \
     src/mainWindow/itemwidget.h \
     src/mainWindow/mainwindow.h \
+    src/mainWindow/messageaction.h \
     src/messageWindow/dialogmessage.h \
     src/utils/QJsonWebSocket/qjsonwebtoken.h \
+    src/utils/chatmessage/qnchatmessage.h \
     src/utils/jsonfilecoinfig.h \
     src/utils/jsontools.h \
     src/utils/userfile.h \

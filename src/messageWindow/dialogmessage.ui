@@ -28,23 +28,6 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QTextBrowser" name="MessageTextBrowser">
-   <property name="geometry">
-    <rect>
-     <x>1</x>
-     <y>1</y>
-     <width>641</width>
-     <height>301</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QTextBrowser#MessageTextBrowser{
-	background-color: rgb(242, 242, 242);
-	border: one;
-	border-bottom: 1px solid lightgray;
-}</string>
-   </property>
-  </widget>
   <widget class="QTextEdit" name="messageEditt">
    <property name="geometry">
     <rect>
@@ -61,7 +44,7 @@
 }</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>1</x>
@@ -274,7 +257,7 @@ QPushButton#historyPushButton:hover{
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>1</x>
@@ -332,6 +315,35 @@ border-style:outset
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QListWidget" name="messageListDialog">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>641</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>641</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>641</width>
+     <height>301</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget#messageListDialog{
+	background-color: rgb(242, 242, 242);
+	border: one;
+	border-bottom: 1px solid lightgray;
+}</string>
+   </property>
   </widget>
  </widget>
  <resources/>

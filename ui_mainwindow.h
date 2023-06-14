@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.4.3
+** Created by: Qt User Interface Compiler version 6.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -206,7 +206,7 @@ public:
         FriendListPage->setObjectName("FriendListPage");
         layoutWidget_2 = new QWidget(FriendListPage);
         layoutWidget_2->setObjectName("layoutWidget_2");
-        layoutWidget_2->setGeometry(QRect(0, 0, 301, 631));
+        layoutWidget_2->setGeometry(QRect(0, 0, 301, 664));
         verticalLayout_2 = new QVBoxLayout(layoutWidget_2);
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setObjectName("verticalLayout_2");
@@ -475,7 +475,7 @@ public:
 
         retranslateUi(mainWindow);
 
-        changeWidget->setCurrentIndex(1);
+        changeWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(mainWindow);

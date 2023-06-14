@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'dialogmessage.ui'
 **
-** Created by: Qt User Interface Compiler version 6.4.3
+** Created by: Qt User Interface Compiler version 6.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -12,9 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -23,9 +23,8 @@ QT_BEGIN_NAMESPACE
 class Ui_DialogMessage
 {
 public:
-    QTextBrowser *MessageTextBrowser;
     QTextEdit *messageEditt;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *emotionPushButton;
     QPushButton *screenCutPushButton;
@@ -34,10 +33,11 @@ public:
     QPushButton *voicePushButton;
     QSpacerItem *menuSpacer;
     QPushButton *historyPushButton;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
     QPushButton *senMessage;
+    QListWidget *messageListDialog;
 
     void setupUi(QWidget *DialogMessage)
     {
@@ -51,14 +51,6 @@ public:
         DialogMessage->setSizePolicy(sizePolicy);
         DialogMessage->setMaximumSize(QSize(834, 794));
         DialogMessage->setStyleSheet(QString::fromUtf8(""));
-        MessageTextBrowser = new QTextBrowser(DialogMessage);
-        MessageTextBrowser->setObjectName("MessageTextBrowser");
-        MessageTextBrowser->setGeometry(QRect(1, 1, 641, 301));
-        MessageTextBrowser->setStyleSheet(QString::fromUtf8("QTextBrowser#MessageTextBrowser{\n"
-"	background-color: rgb(242, 242, 242);\n"
-"	border: one;\n"
-"	border-bottom: 1px solid lightgray;\n"
-"}"));
         messageEditt = new QTextEdit(DialogMessage);
         messageEditt->setObjectName("messageEditt");
         messageEditt->setGeometry(QRect(1, 343, 641, 141));
@@ -66,14 +58,14 @@ public:
 "	background-color: rgb(242, 242, 242);\n"
 "	border: none;\n"
 "}"));
-        widget = new QWidget(DialogMessage);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(1, 303, 641, 40));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(DialogMessage);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(1, 303, 641, 40));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(7);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        emotionPushButton = new QPushButton(widget);
+        emotionPushButton = new QPushButton(layoutWidget);
         emotionPushButton->setObjectName("emotionPushButton");
         emotionPushButton->setMinimumSize(QSize(38, 38));
         emotionPushButton->setMaximumSize(QSize(38, 38));
@@ -90,7 +82,7 @@ public:
 
         horizontalLayout->addWidget(emotionPushButton);
 
-        screenCutPushButton = new QPushButton(widget);
+        screenCutPushButton = new QPushButton(layoutWidget);
         screenCutPushButton->setObjectName("screenCutPushButton");
         screenCutPushButton->setMinimumSize(QSize(38, 38));
         screenCutPushButton->setMaximumSize(QSize(38, 38));
@@ -106,7 +98,7 @@ public:
 
         horizontalLayout->addWidget(screenCutPushButton);
 
-        filePushButton = new QPushButton(widget);
+        filePushButton = new QPushButton(layoutWidget);
         filePushButton->setObjectName("filePushButton");
         filePushButton->setMinimumSize(QSize(38, 38));
         filePushButton->setMaximumSize(QSize(38, 38));
@@ -122,7 +114,7 @@ public:
 
         horizontalLayout->addWidget(filePushButton);
 
-        picturePushButton = new QPushButton(widget);
+        picturePushButton = new QPushButton(layoutWidget);
         picturePushButton->setObjectName("picturePushButton");
         picturePushButton->setMinimumSize(QSize(38, 38));
         picturePushButton->setMaximumSize(QSize(38, 38));
@@ -138,7 +130,7 @@ public:
 
         horizontalLayout->addWidget(picturePushButton);
 
-        voicePushButton = new QPushButton(widget);
+        voicePushButton = new QPushButton(layoutWidget);
         voicePushButton->setObjectName("voicePushButton");
         voicePushButton->setMinimumSize(QSize(38, 38));
         voicePushButton->setMaximumSize(QSize(38, 38));
@@ -159,7 +151,7 @@ public:
 
         horizontalLayout->addItem(menuSpacer);
 
-        historyPushButton = new QPushButton(widget);
+        historyPushButton = new QPushButton(layoutWidget);
         historyPushButton->setObjectName("historyPushButton");
         historyPushButton->setMinimumSize(QSize(38, 38));
         historyPushButton->setMaximumSize(QSize(38, 38));
@@ -175,17 +167,17 @@ public:
 
         horizontalLayout->addWidget(historyPushButton);
 
-        widget1 = new QWidget(DialogMessage);
-        widget1->setObjectName("widget1");
-        widget1->setGeometry(QRect(1, 490, 611, 36));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(DialogMessage);
+        layoutWidget1->setObjectName("layoutWidget1");
+        layoutWidget1->setGeometry(QRect(1, 490, 611, 36));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
-        senMessage = new QPushButton(widget1);
+        senMessage = new QPushButton(layoutWidget1);
         senMessage->setObjectName("senMessage");
         senMessage->setMinimumSize(QSize(121, 34));
         senMessage->setMaximumSize(QSize(121, 34));
@@ -200,6 +192,15 @@ public:
 
         horizontalLayout_2->addWidget(senMessage);
 
+        messageListDialog = new QListWidget(DialogMessage);
+        messageListDialog->setObjectName("messageListDialog");
+        messageListDialog->setGeometry(QRect(0, 0, 641, 301));
+        messageListDialog->setMaximumSize(QSize(641, 301));
+        messageListDialog->setStyleSheet(QString::fromUtf8("QListWidget#messageListDialog{\n"
+"	background-color: rgb(242, 242, 242);\n"
+"	border: one;\n"
+"	border-bottom: 1px solid lightgray;\n"
+"}"));
 
         retranslateUi(DialogMessage);
 
