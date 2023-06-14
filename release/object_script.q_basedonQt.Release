@@ -1,9 +1,11 @@
 release/main.o
 release/loginwidget.o
-release/frienditem.o
+release/itemwidget.o
 release/mainwindow.o
+release/messageaction.o
 release/dialogmessage.o
 release/qjsonwebtoken.o
+release/qnchatmessage.o
 release/jsonfilecoinfig.o
 release/jsontools.o
 release/userfile.o
@@ -12,9 +14,11 @@ release/websocketclient.o
 release/qrc_src.o
 release/qrc_qmake_qmake_qm_files.o
 release/moc_loginwidget.o
-release/moc_frienditem.o
+release/moc_itemwidget.o
 release/moc_mainwindow.o
+release/moc_messageaction.o
 release/moc_dialogmessage.o
+release/moc_qnchatmessage.o
 release/moc_userfile.o
 release/moc_netService.o
 release/moc_websocketclient.o

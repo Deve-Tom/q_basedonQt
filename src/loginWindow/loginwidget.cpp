@@ -3,7 +3,7 @@
 
 loginWidget::loginWidget(QWidget *parent) : QWidget(parent), ui(new Ui::loginWidget) {
     ui->setupUi(this);
-    this->net = new netService("http://127.0.0.1:4523/holaa",this);
+    this->net = new netService("http://100.70.78.20:4523/holaa",this);
     initUi();
     initPicture();
 

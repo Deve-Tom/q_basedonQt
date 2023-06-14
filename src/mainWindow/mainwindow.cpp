@@ -39,13 +39,27 @@ void mainWindow::initUI(){
     effect->setBlurRadius(15);
     ui->backwidget->setGraphicsEffect(effect);
 
-    // 在Message响应窗口种生成对话窗口
+    // 在Message响应窗口中生成对话窗口——并隐藏
     this->dialogWindow = new DialogMessage(this->ui->messagePageWidget);
     this->dialogWindow->resize(831,788);
+    this->dialogWindow->hide();
     //this->dialogWindow->move(0,50);
 
     // 默认进入界面在消息展示处
     on_MessageButton_clicked();
+
+    // 好友列表label背景图
+    this->backImgFriendList = new QLabel(ui->friendListShow);
+    this->backImgFriendList->move(QPoint(290,190));
+    this->backImgFriendList->resize(QSize(133,164));
+    QPixmap pixmap(":/backGround/img/qqBackGround.png");
+    pixmap = pixmap.scaled(QSize(133,164),Qt::KeepAspectRatio,Qt::SmoothTransformation);
+    this->backImgFriendList->setPixmap(pixmap);
+
+    this->friendIDLabelShow = new QLabel(ui->messagePage);
+    this->friendIDLabelShow->move(QPoint(350,39));
+    this->friendIDLabelShow->resize(QSize(212,39));
+    // this->friendIDLabelShow->setText("测试");
 }
 
 // 好友列表初始化
@@ -77,7 +91,7 @@ void mainWindow::getFriendList(){
             addFriendListItem(pix,objTemp.value("nickname").toString()
                             ,objTemp.value("person_signature").toString(),
                             objTemp.value("friend_id").toInt());
-    }
+        }
     }
 }
 
@@ -93,7 +107,22 @@ void mainWindow::addFriendListItem(QPixmap pixdata, const QString &nickname, con
     item->setSizeHint(QSize(316,90));
     ui->friendListWidget->addItem(item);
     ui->friendListWidget->setItemWidget(item,itemWidget);
+
     connect(itemWidget,&ItemWidget::currentID,this,&mainWindow::debug);
+    connect(itemWidget,&ItemWidget::currentID,this,&mainWindow::goToMessageChat);
+}
+
+// 设置通信好友的消息item情况
+void mainWindow::addHistroyListItem(QPixmap pixdata, const QString &nickname, const QString &signature, int currentID){
+    ItemWidget *itemWidget = new ItemWidget(this);
+    itemWidget->setData(pixdata,nickname,signature,currentID);
+    QListWidgetItem *item = new QListWidgetItem();
+    item->setSizeHint(QSize(316,90));
+    ui->messageList->addItem(item);
+    ui->messageList->setItemWidget(item,itemWidget);
+
+    // 添加消息界面消息函数
+    connect(itemWidget,&ItemWidget::currentID,this,&mainWindow::beginChat);
 }
 
 
@@ -177,9 +206,49 @@ void mainWindow::setNet(netService *net){
     historyMessageList();
 }
 
+void mainWindow::goToMessageChat(int data){
+    QJsonObject currentInfo;
+    currentInfo.insert("user_id",QString::number(data));
+    currentInfo.insert("token",std::get<1>(this->userData));
+
+    QJsonObject friendInfo = this->net->sendRequestGetInfo(currentInfo,"/user/");
+
+    // 设置条目
+    if(friendInfo.value("status_code")==200){
+        // 头像问题可能出自于这里
+        QJsonObject temp;
+        temp.insert("test",false);
+        temp.insert("download","");
+        temp.insert("content",friendInfo.value("user").toObject().value("avatar").toString());
+
+        QByteArray data = this->net->sendRequestGetFile(temp,"/file/");
+        QBuffer buffer(&data);
+        buffer.open(QIODevice::ReadOnly);
+        QImageReader reader(&buffer,"png");
+        QPixmap pix = QPixmap::fromImage(reader.read());
+
+        // 设置列表
+        addHistroyListItem(pix,friendInfo.value("user").toObject().value("nickname").toString()
+                          ,friendInfo.value("user").toObject().value("signature").toString(),
+                          friendInfo.value("user").toObject().value("user_id").toInt());
+
+    }
+
+    on_MessageButton_clicked();
+}
+
 // debug测试
 void mainWindow::debug(int data){
     qDebug()<<data<<" 被点击了\n";
+}
+
+// 初始化聊天界面
+void mainWindow::beginChat(int friend_id){
+    this->friendIDLabelShow->setText(QString::number(friend_id));
+
+    this->dialogWindow->show();
+    this->dialogWindow->setNet(this->net);
+    this->dialogWindow->reset(friend_id,std::get<0>(this->userData).toInt(),std::get<1>(this->userData));
 }
 
 // 关闭窗口

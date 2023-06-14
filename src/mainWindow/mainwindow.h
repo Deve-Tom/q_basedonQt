@@ -10,6 +10,7 @@
 #include <QMouseEvent>
 #include <QGraphicsDropShadowEffect>
 #include <utility>
+#include <QLabel>
 #include "../messageWindow/dialogmessage.h"
 #include "../webService/netService.h"
 #include "itemwidget.h"
@@ -45,22 +46,28 @@ private:
     QPoint m_dragPos;
     DialogMessage* dialogWindow;
     netService* net;
+    QLabel *backImgFriendList;
     std::tuple<QString,QString,QString>userData;
+    QLabel *friendIDLabelShow;
 
 private:
     void initUI();
     void getFriendList();
     void historyMessageList();
     void addFriendListItem(QPixmap pixdata,const QString& nickname,const QString& signature,int currentID);
+    void addHistroyListItem(QPixmap pixdata,const QString& nickname,const QString& signature,int currentID);
     void paintEvent(QPaintEvent *event)override;
     void mousePressEvent(QMouseEvent *event)override;
     void mouseMoveEvent(QMouseEvent *event)override;
     void mouseReleaseEvent(QMouseEvent *event)override;
 
+
 public slots:
     void userInfo(std::tuple<QString,QString,QString> userInforData);
     void setNet(netService* net);
+    void goToMessageChat(int data);
     void debug(int data);
+    void beginChat(int friend_id);
 };
 
 #endif // MAINWINDOW_H

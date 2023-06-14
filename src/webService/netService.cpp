@@ -93,7 +93,7 @@ QJsonObject netService::sendRequestGetInfo(QJsonObject &data, QString router){
         }
     }
     QUrl _url(this->url+router+params);
-//    qDebug()<<"getuserInformation:"<<_url;
+    // qDebug()<<"getuserInformation:"<<_url;
 
     request.setUrl(_url);
     request.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
